@@ -1,0 +1,81 @@
+{
+  "name": "react-3d-planner",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "ESLINT_NO_DEV_ERRORS=true FAST_REFRESH=false react-app-rewired start",
+    "build": "react-app-rewired build",
+    "analyze": "npm run build -- --stats && webpack-bundle-analyzer ./build/bundle-stats.json",
+    "test": "jest",
+    "eject": "react-scripts eject",
+    "lint": "eslint src tailwind.config.js config-overrides.js",
+    "format": "prettier --write \"src/**/*.js\" \"tailwind.config.js\"  \"config-overrides.js\""
+  },
+  "babelMacros": {
+    "twin": {
+      "preset": "goober",
+      "css": {
+        "import": "css",
+        "from": "goober"
+      }
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "plugins": [
+      "prettier"
+    ],
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "prettier",
+      "eslint:recommended"
+    ],
+    "ignorePatterns": [
+      "build/"
+    ],
+    "rules": {
+      "prettier/prettier": "warn"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@react-three/drei": "^3.9.0",
+    "goober": "^2.0.33",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-three-fiber": "^5.3.19",
+    "tailwindcss": "^2.0.3",
+    "three": "^0.126.0",
+    "twin.macro": "^2.2.3",
+    "wouter": "^2.7.3"
+  },
+  "devDependencies": {
+    "@agney/babel-plugin-goober-css-prop": "0.0.1",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.1",
+    "babel-plugin-transform-goober": "^1.2.0",
+    "customize-cra": "^1.0.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1",
+    "react-app-rewired": "^2.1.8",
+    "react-scripts": "^4.0.3",
+    "webpack-bundle-analyzer": "^4.4.0"
+  }
+}
