@@ -2,10 +2,11 @@ import React, { Suspense } from 'react'
 import 'twin.macro'
 import { theme } from 'twin.macro'
 import { createGlobalStyles } from 'goober/global'
-import { Route, Link } from 'wouter'
+import { Switch, Route, Link } from 'wouter'
 
 import NavLink, { Nav } from 'components/NavLink'
 import Spinner from 'components/Spinner'
+import NotFound from './Pages/NotFound/NotFound'
 
 const Homepage = React.lazy(() => import('./Pages/Homepage/Homepage'))
 const Planner = React.lazy(() => import('./Pages/Planner/Planner'))
@@ -34,8 +35,11 @@ function App() {
         </aside>
         <div tw="flex-1 flex flex-col overflow-hidden">
           <Suspense fallback={<Spinner label="Loading page" />}>
-            <Route path="/" component={Homepage} />
-            <Route path="/planner" component={Planner} />
+            <Switch>
+              <Route path="/" component={Homepage} />
+              <Route path="/planner" component={Planner} />
+              <Route component={NotFound} />
+            </Switch>
           </Suspense>
         </div>
       </main>

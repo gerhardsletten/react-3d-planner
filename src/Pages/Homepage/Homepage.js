@@ -14,7 +14,7 @@ function Homepage() {
           Example used CRA, twin-macro, wouter and react-three-fiber
         </p>
         <Link
-          href="planner"
+          href="/planner"
           tw="bg-primary text-xl shadow-md text-white inline-block px-4 py-1 rounded hocus:(shadow-2xl ring-4 ring-gray-800 ring-opacity-50)"
         >
           Enter 3D planner »
